@@ -129,7 +129,7 @@ application.
 1.  Clone the repository:
 
     ``` bash
-    git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+    https://github.com/harsha1498/cyber-attack-detection.git
     cd YOUR-REPOSITORY
     ```
 
@@ -300,24 +300,3 @@ it needs security improvements before public use:
 -   Do not commit private datasets, database dumps, virtual
     environments, or secrets.
 
-## Future Improvements
-
--   Add robust validation for uploaded datasets and missing values.
--   Save preprocessing encoders and reuse them during prediction.
--   Make the train/test split setting configurable.
--   Add precision, recall, F1-score, confusion matrix, and ROC-AUC where
-    appropriate.
--   Replace the stored Neural Network score with a real training and
-    evaluation pipeline if that feature is required.
--   Improve authentication, session handling, and user feedback.
--   Add automated tests and deployment instructions.
-
-## License
-
-No license is specified yet. Add a license file (for example, MIT) only
-if you intend to grant others permission to use, modify, and distribute
-this project.
-
-## Author
-
-Add your name, institution, and project contact details here.
