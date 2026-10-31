@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block theme %}theme-green{% endblock %}
+{% block heading %}About This Project{% endblock %}
+{% block content %}
+<div class="about">
+  <div><h2>Detection of cyber attack using Artificial Intelligence</h2>
+  <p>Each network connection is described by 41 features and labelled normal or attack. We train six models (Extra Trees, Decision Tree, SVM, KNN, AdaBoost, Neural Network), compare their accuracy, and use the best one to classify new traffic.</p></div>
+  <div>{% include "_art.html" %}</div>
+</div>
+{% endblock %}

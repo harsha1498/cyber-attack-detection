@@ -1,0 +1,600 @@
+
+:root {
+    --ink: #14213d;
+    --muted: #5a6578;
+    --line: #dfe5ee;
+    --bg: #f7f9fc;
+}
+
+.theme-blue {
+    --c1: #0b3d91;
+    --c2: #1a5fd1;
+    --tint: #cfe0fb;
+    --btn: #0a2f6b;
+}
+
+.theme-green {
+    --c1: #075a37;
+    --c2: #13915a;
+    --tint: #cdeede;
+    --btn: #0a6a40;
+}
+
+/* Global */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 18px;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Navigation Bar */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    padding: 22px 6%;
+    min-height: 95px;
+
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.logo b {
+    display: block;
+    color: var(--c2);
+}
+
+.logo-mark {
+    display: grid;
+    place-items: center;
+
+    width: 52px;
+    height: 52px;
+
+    border: 2px solid var(--c2);
+    border-radius: 6px;
+
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--ink);
+}
+
+/* Navigation Menu */
+.nav nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 12px 28px;
+    font-size: 20px;
+}
+
+.nav nav a {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.nav nav a:not(.btn):hover {
+    color: var(--c2);
+}
+
+/* Buttons */
+.btn,
+button {
+    background: var(--btn);
+    color: #fff;
+
+    border: 0;
+    border-radius: 5px;
+
+    padding: 15px 30px;
+
+    font: 600 18px "Poppins", Arial, sans-serif;
+    cursor: pointer;
+}
+
+.btn:hover,
+button:hover {
+    background: var(--c2);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background: var(--c1);
+    color: #fff;
+
+    padding: 75px 6% 160px;
+
+    clip-path: polygon(0 0, 100% 0, 100% 12%, 0 100%);
+}
+
+.hero.small {
+    padding: 65px 6% 180px;
+}
+
+.hero.big {
+    padding: 75px 6% 180px;
+
+    clip-path: polygon(0 0, 100% 0, 100% 72%, 0 100%);
+
+    min-height: 430px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 4.5vw, 52px);
+    line-height: 1.25;
+
+    margin: 0 0 18px;
+    max-width: 650px;
+}
+
+.hero p {
+    max-width: 520px;
+    font-size: 19px;
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+.hero .btn {
+    background: var(--c2);
+    margin-top: 25px;
+    display: inline-block;
+}
+
+/* Hero Illustration */
+.hero-art {
+    position: absolute;
+    right: 0;
+    bottom: 12%;
+    width: min(46%, 520px);
+}
+
+.hero-art svg {
+    width: 100%;
+    display: block;
+}
+
+/* Main Content */
+main {
+    padding: 0 6% 70px;
+    margin-top: -90px;
+
+    position: relative;
+    flex: 1;
+    width: 100%;
+}
+
+.hero.big + main {
+    margin-top: 20px;
+}
+
+/* Form Box */
+.box {
+    max-width: 520px;
+    margin: 0 auto;
+
+    background: #3b5373;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.box-head {
+    background: #12284a;
+    color: #fff;
+
+    text-align: center;
+    font-size: 19px;
+    font-weight: 600;
+
+    padding: 14px;
+    margin-bottom: 16px;
+}
+
+.box input,
+.box select {
+    width: 100%;
+
+    padding: 16px;
+    margin-bottom: 13px;
+
+    border: 1px solid #fff;
+    border-radius: 4px;
+
+    font: 17px "Poppins", Arial, sans-serif;
+}
+
+.box input:focus,
+.box select:focus {
+    outline: 2px solid var(--c2);
+}
+
+.box button {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Result Panel */
+.panel {
+    max-width: 850px;
+    margin: 0 auto;
+
+    background: #fff;
+    border: 1px solid var(--line);
+
+    padding: 35px;
+    text-align: center;
+}
+
+.panel h3 {
+    font-size: 21px;
+    margin: 0 0 12px;
+}
+
+.panel .note {
+    font-size: 17px;
+    color: var(--muted);
+}
+
+.result {
+    font-size: clamp(22px, 3vw, 29px);
+    font-weight: 700;
+
+    color: var(--c1);
+    margin: 22px 0;
+}
+
+/* Status Messages */
+.bad {
+    color: #c0392b;
+}
+
+.good {
+    color: #1e8449;
+}
+
+.err {
+    color: #ffd9d4;
+    font-size: 17px;
+    margin: 0 0 12px;
+}
+
+.flash {
+    max-width: 520px;
+    margin: 0 auto 15px;
+
+    padding: 14px 18px;
+
+    background: #fff3cd;
+    border: 1px solid #f0d77a;
+
+    font-size: 17px;
+}
+
+.flash.success {
+    background: #d8f3e3;
+    border-color: #9ad7b4;
+}
+
+/* Table */
+.table-wrap {
+    overflow: auto;
+    max-height: 480px;
+
+    background: #fff;
+    border: 1px solid var(--line);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 17px;
+}
+
+th,
+td {
+    padding: 13px 15px;
+
+    border: 1px solid var(--line);
+    white-space: nowrap;
+    text-align: left;
+
+    font-size: 17px;
+}
+
+th {
+    background: var(--c1);
+    color: #fff;
+
+    position: sticky;
+    top: 0;
+
+    font-weight: 700;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(220px, 1fr)
+    );
+
+    gap: 15px;
+    margin: 22px 0;
+    text-align: left;
+}
+
+.grid label {
+    font-size: 17px;
+    color: var(--muted);
+    display: block;
+}
+
+.grid input {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid var(--line);
+    border-radius: 4px;
+
+    font-size: 17px;
+}
+
+/* About Section */
+.about {
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr;
+
+    gap: 35px;
+    align-items: center;
+
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about h2 {
+    font-size: clamp(27px, 3.5vw, 38px);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.about svg {
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    padding: 22px 6%;
+
+    font-size: 17px;
+    line-height: 1.8;
+
+    color: var(--muted);
+
+    border-top: 1px solid var(--line);
+    background: #fff;
+
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+
+    .nav nav {
+        gap: 12px 18px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Design */
+@media (max-width: 760px) {
+
+    body {
+        font-size: 17px;
+    }
+
+    .nav {
+        padding: 16px 4%;
+        gap: 14px;
+    }
+
+    .nav nav {
+        font-size: 17px;
+        gap: 12px 16px;
+    }
+
+    .nav nav a {
+        font-size: 17px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .logo-mark {
+        width: 44px;
+        height: 44px;
+        font-size: 25px;
+    }
+
+    .hero {
+        padding: 50px 5% 130px;
+    }
+
+    .hero.small {
+        padding: 45px 5% 130px;
+    }
+
+    .hero-art {
+        display: none;
+    }
+
+    .hero.big {
+        min-height: 0;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    main {
+        padding: 0 4% 50px;
+    }
+
+    .box {
+        padding: 16px;
+    }
+
+    .box-head {
+        font-size: 18px;
+    }
+
+    .box input,
+    .box select {
+        font-size: 17px;
+        padding: 14px;
+    }
+
+    .btn,
+    button {
+        font-size: 17px;
+        padding: 13px 22px;
+    }
+
+    .panel {
+        padding: 22px 15px;
+    }
+
+    .panel h3 {
+        font-size: 20px;
+    }
+
+    .panel .note {
+        font-size: 16px;
+    }
+
+    .result {
+        font-size: 22px;
+    }
+
+    table,
+    th,
+    td {
+        font-size: 16px;
+    }
+
+    th,
+    td {
+        padding: 11px 12px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid label {
+        font-size: 16px;
+    }
+
+    .grid input {
+        font-size: 16px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .about h2 {
+        font-size: 28px;
+    }
+
+    footer {
+        padding: 18px 4%;
+        font-size: 16px;
+    }
+}
+
+/* Small Mobile Screens */
+@media (max-width: 400px) {
+
+    .nav nav {
+        font-size: 16px;
+        gap: 10px;
+    }
+
+    .nav nav a {
+        font-size: 16px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .panel {
+        padding: 18px 12px;
+    }
+
+    .box {
+        padding: 12px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        transition: none !important;
+    }
+}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block theme %}theme-green{% endblock %}
+{% block hero %}
+<section class="hero big">
+  <h1>Detection Of Cyber attack Using Artificial Intelligence</h1>
+  <p>Protecting systems from cyber threats using machine learning and artificial intelligence techniques to detect attacks and ensure a safer digital world.</p>
+  <a class="btn" href="{{ url_for('login') }}">Get Start</a>
+  <div class="hero-art">{% include "_art.html" %}</div>
+</section>
+{% endblock %}

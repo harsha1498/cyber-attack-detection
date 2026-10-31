@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}Cyber Attack Detection{% endblock %}</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+<body class="{% block theme %}theme-blue{% endblock %}">
+<header class="nav">
+  <a class="logo" href="{{ url_for('index') }}"><span class="logo-mark">A</span><span><b>CYBER ATTACK</b>DETECTION</span></a>
+  <nav>
+  {% if session.get('useremail') %}
+    <a href="{{ url_for('index') }}">Home</a><a href="{{ url_for('load') }}">Upload</a><a href="{{ url_for('view') }}">View</a>
+    <a href="{{ url_for('preprocess') }}">Preprocessing</a><a href="{{ url_for('model') }}">Model Training</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+  {% else %}
+    <a href="{{ url_for('index') }}">Home</a><a href="{{ url_for('about') }}">About</a>
+    <a href="{{ url_for('login') }}">Login</a><a href="{{ url_for('registration') }}">Registration</a>
+  {% endif %}
+    <a class="btn" href="{{ url_for('prediction') }}">Prediction</a>
+  </nav>
+</header>
+{% block hero %}<section class="hero small"><h1>{% block heading %}{% endblock %}</h1></section>{% endblock %}
+<main>
+  {% with messages = get_flashed_messages(with_categories=true) %}{% for c, m in messages %}<div class="flash {{ c }}">{{ m }}</div>{% endfor %}{% endwith %}
+  {% block content %}{% endblock %}
+</main>
+<footer>DEPT OF CSE, ALIET</footer>
+</body></html>

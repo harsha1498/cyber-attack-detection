@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block heading %}Register Your Account{% endblock %}
+{% block content %}
+<form class="box" method="post" action="{{ url_for('registration') }}">
+  <div class="box-head">User Registration</div>
+  {% if msg %}<p class="err">{{ msg }}</p>{% endif %}
+  <input type="text" name="username" placeholder="Enter Your Name" required>
+  <input type="email" name="useremail" placeholder="Enter Your Email" required>
+  <input type="password" name="userpassword" placeholder="Enter Password" required>
+  <input type="password" name="conpassword" placeholder="Confirm Password" required>
+  <input type="number" name="Age" placeholder="Age" min="1" required>
+  <input type="text" name="address" placeholder="Address" required>
+  <input type="tel" name="contact" placeholder="Contact Number" required>
+  <button type="submit">Register</button>
+</form>
+{% endblock %}

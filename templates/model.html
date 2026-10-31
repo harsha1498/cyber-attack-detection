@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block heading %}Train Your Model With<br>Uploaded Data Set{% endblock %}
+{% block content %}
+<form class="panel" method="post" action="{{ url_for('model') }}">
+  {% if msg %}<p class="result">{{ msg }}</p>{% endif %}
+  <h3>DETECTING CYBER ATTACK</h3>
+  <p class="note">With the help of artificial intelligence</p>
+  <select name="algo" style="padding:10px;min-width:240px">
+    <option value="0">Choose an Algorithm</option>
+    <option value="1">Extra Trees Classifier</option>
+    <option value="2">Decision Tree Classifier</option>
+    <option value="3">Support Vector Classifier</option>
+    <option value="4">K-Nearest Neighbour</option>
+    <option value="5">AdaBoost Classifier</option>
+    <option value="6">Neural Network</option>
+  </select><br><br>
+  <button type="submit" style="background:#1e9e45">Train</button>
+</form>
+{% endblock %}

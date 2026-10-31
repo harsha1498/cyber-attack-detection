@@ -1,0 +1,38 @@
+
+{% extends "base.html" %}
+
+{% block heading %}
+Here Is Your Uploaded<br>Data Set
+{% endblock %}
+
+{% block content %}
+{% if rows %}
+<div class="table-wrap">
+    <table>
+        <thead>
+            <tr>
+                {% for c in columns %}
+                    <th>{{ c }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for r in rows %}
+                <tr>
+                    {% for v in r %}
+                        <td>{{ v }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<p style="text-align:center; margin-top:20px">
+    <a class="btn" href="{{ url_for('preprocess') }}">Preprocess</a>
+</p>
+{% else %}
+    <p>No dataset available. Please upload a CSV file first.</p>
+{% endif %}
+{% endblock %}

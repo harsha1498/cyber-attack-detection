@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block heading %}Upload Your Data Set{% endblock %}
+{% block content %}
+<form class="panel" method="post" action="{{ url_for('load') }}" enctype="multipart/form-data">
+  <h3>CHOOSE A DATASET FILE (CSV FORMAT)</h3>
+  <p class="note">Note: the file should be in CSV format.</p>
+  {% if msg %}<p class="result good">{{ msg }}</p>{% endif %}
+  <input type="file" name="data" accept=".csv" required><br><br>
+  <button type="submit">Upload</button>
+  {% if msg %}<a class="btn" href="{{ url_for('view') }}">View</a>{% endif %}
+</form>
+{% endblock %}

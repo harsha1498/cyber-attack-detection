@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block heading %}Preprocess of Your Data{% endblock %}
+{% block content %}
+<form class="panel" method="post" action="{{ url_for('preprocess') }}">
+  <h3>DATA PREPROCESSED AND IT SPLITS SUCCESSFULLY</h3>
+  <p class="note">Detecting cyber attack with the help of artificial intelligence</p>
+  {% if msg %}<p class="result good">{{ msg }}</p>{% endif %}
+  <p><label for="split">Test size (%)</label><br><input id="split" type="number" name="split" value="30" min="1" max="90" required></p>
+  <button type="submit">Submit</button>
+  {% if msg %}<a class="btn" href="{{ url_for('model') }}">Train</a>{% endif %}
+</form>
+{% endblock %}

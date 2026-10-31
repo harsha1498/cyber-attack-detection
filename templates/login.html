@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block heading %}Login To Your Account{% endblock %}
+{% block content %}
+<form class="box" method="post" action="{{ url_for('login') }}">
+  <div class="box-head">Login To Your Account</div>
+  {% if name %}<p class="err">{{ name }}</p>{% endif %}
+  <input type="email" name="useremail" placeholder="Enter Email Address" required>
+  <input type="password" name="userpassword" placeholder="Enter Password" required>
+  <button type="submit">Login</button>
+</form>
+{% endblock %}
